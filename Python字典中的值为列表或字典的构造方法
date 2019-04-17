@@ -1,2 +1,5 @@
 dict = {}
 dict.setdefault(key,[]).append(value)
+
+
+Use the `printf()` function.
