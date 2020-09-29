@@ -28,3 +28,8 @@ def conversion(hgvs):
         if any(letters.lower() in hgvs.lower() for letters in conversionlist):
             return replace_all(hgvs)
     return hgvs
+
+def replace_all(hgvs):
+    # Author: Thomas Glaessle
+    pattern = re.compile('|'.join(conversionlist), re.IGNORECASE)
+    return pattern.sub(lambda m: conversiondict[m.group().capitalize()], hgvs)
